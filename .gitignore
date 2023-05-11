@@ -3,6 +3,8 @@
 # Dependency directories
 venv/
 
+myenv/
+
 # Discord token and API key
 .env
 
