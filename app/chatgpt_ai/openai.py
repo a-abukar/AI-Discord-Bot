@@ -7,17 +7,16 @@ load_dotenv()
 openai.api_key = os.getenv('CHATGPT_API_KEY')
 
 def chatgpt_response(prompt):
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=prompt,
-        temperature=0.5,
-        max_tokens=50,
-        presence_penalty = 0,
-        frequency_penalty = 0,
-        best_of = 1
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=200
     )
 
-    response_dict = response.get("choices")
-    if response_dict and len(response_dict) > 0:
-        prompt_response = response_dict[0]["text"]
-    return prompt_response
+    response_choices = response.choices
+    if response_choices and len(response_choices) > 0:
+        prompt_response = response_choices[0].message["content"]
+    return prompt_response.strip()
