@@ -69,3 +69,7 @@ Once the bot is running, you can use it in any Discord channel by mentioning it 
 
 - This project is open source, so contributions are welcome
 - If you would like to contribute, raise a PR, and myself and the team will have a look as soon as possible
+
+## TODO
+
+- Reactivate OpenAI account PAYG 
