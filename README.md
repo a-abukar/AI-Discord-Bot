@@ -40,6 +40,13 @@ pip install -r requirements.txt
 python run.py
 ```
 
+#### Locally with Python - in a virtual environment
+
+1. Install virtualenv using `python3 -m pip install --user virtualenv`
+2. Create the virtual environment using `python3 -m venv myenv` in your Python working directory
+3. Activate the virtual environment using `source myenv/bin/activate`
+4. Run `which python` - you will see the `/path/to/your/myenv`
+
 #### In a container
 1. Build the docker image using this command:
 ```bash
